@@ -6,6 +6,30 @@
   position: relative;
 }
 
+.mask1 {
+  width: 50px;
+  height: 50px;
+  background: url("../resources/mask1.png") no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+.mask2 {
+  width: 50px;
+  height: 50px;
+  background: url("../resources/mask2.png") no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+.mask3 {
+  width: 50px;
+  height: 50px;
+  background: url("../resources/mask3.png") no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -55,18 +79,6 @@ body {
   color: black;
 }
 
-.guitar-hero-div {
-  width: 40%;
-  height: 85%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background: #000000d1;
-  text-align: center;
-  animation: mymove 1.5s infinite;
-  border-radius: 5px;
-}
-
 /* Gladiator part */
 @keyframes mymove {
   0% {
@@ -78,15 +90,6 @@ body {
   100% {
     box-shadow: 0px 0px 100px 10px rgba(252, 219, 0, 0.8); /* White */
   }
-}
-
-.user-input-buttons {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  flex-direction: row;
-  position: relative;
-  top: 315px;
 }
 
 .button-A {
@@ -176,7 +179,7 @@ p {
   cursor: pointer;
   text-decoration: none;
   padding: 0.5em 1em;
-  margin: 2rem;
+  margin: 1.2rem;
   border-radius: 0.25em;
   position: relative;
 }
@@ -332,8 +335,8 @@ p {
   background-color: #18191f;
   color: #fff;
   font-size: 5rem;
-  width: 7rem;
-  height: 7rem;
+  width: 5rem;
+  height: 5rem;
   box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080,
     2px 2px 10px #00000080, 2px 2px 3px #00000080, inset 2px 2px 10px #00000080,
     inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080,
@@ -363,7 +366,7 @@ p {
 
 /* Add or update these styles for the icons */
 .container__icon {
-  font-size: 3rem;
+  font-size: 2rem;
   display: inline-block;
   color: #fff;
 }
@@ -402,15 +405,55 @@ p {
 #menu {
   height: 100%;
 }
+.score-and-streak{
+  display: flex;
+  flex-direction: row;
+  height: 5%;
+  justify-content: space-around;
+ }
 
-#score {
-  position: relative;
-  bottom: 315px;
-  right: 295px;
+ .guitar-hero-table{
+  height: 80%;
+ }
+
+ .user-input-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: row;
+  height: 15%;
 }
 
-#streak {
+.table-th{
+  position: relative; 
+  left: 100px;
+  width: 32%;
+}
+.table-separator{
+  width: 0.1%;
+  border-left: 0px solid rgb(249, 249, 249);
+  background-color: rgb(249, 249, 249);
+  height: 100%;
   position: relative;
-  bottom: 355px;
-  left: 295px;
+  top: 0px;
+  z-index: 3;
+  box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.8); /* White neon glow */
+}
+
+#score{
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#streak{
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-and-streak-separator{
+  width: 33%;
 }

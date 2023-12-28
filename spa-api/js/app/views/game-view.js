@@ -14,34 +14,41 @@ define(function () {
             preload="auto"
           ></audio>
           <video loop id="myVideo">
+            /* <source
+              src="./resources/Slipknot - Nero Forte.mp4"
+              type="video/mp4"
+            /> */
             <source
-              src="./resources/Madonna - 2012 Super Bowl Halftime Show (1).mp4"
+              src="./resources/Splipknot - Nero Forte.mp4"
               type="video/mp4"
             />
           </video>
-          <div class="vl-1"></div>
-          <div class="vl-2"></div>
+         <!-- <div class="vl-1"></div> -->
+          <!-- <div class="vl-2"></div> -->
           <div class="content">
       
             <div class="guitar-hero-div">
-            <div id="score">
-                <h2>Score: 0 </h2>
+            <div class="score-and-streak">
+              <div id="score">
+                <h3>Score: 0 </h3>
+              </div>
+              <div class="score-and-streak-separator"></div>
+              <div id="streak">
+                <h3>Streak: 0 </h3>
+              </div>
             </div>
-            <div id="streak">
-                <h2>Streak: 0 </h2>
-            </div>
+            
               <table class="guitar-hero-table">
                 <tr>
-                  <th
-                    style="position: relative; left: 120px; bottom: 350px"
+                  <th class="table-th"
                     id="column1"
                   ></th>
-                  <th
-                    style="position: relative; left: 120px; bottom: 350px"
+                  <th class="table-separator"></th>
+                  <th class="table-th"
                     id="column2"
                   ></th>
-                  <th
-                    style="position: relative; left: 120px; bottom: 350px"
+                  <th class="table-separator"></th>
+                  <th class="table-th"
                     id="column3"
                   ></th>
                 </tr>

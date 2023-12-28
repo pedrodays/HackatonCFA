@@ -66,7 +66,7 @@ define(["views/game-view", "router"], function (gameView, router) {
 
     console.log(pos);
 
-    if (pos >= 800 && pos <= 900) {
+    if (pos >= 700 && pos <= 750) {
       console.log("entrou no if");
       $(`#column${num} .sprite:first-child`).remove();
       internals.streak++;
@@ -79,7 +79,7 @@ define(["views/game-view", "router"], function (gameView, router) {
       console.log("STREAK " + internals.streak);
     } else {
       internals.streak = 0;
-      $("#streak").empty();
+    
 
       console.log("STREAK " + internals.streak);
     }
@@ -136,6 +136,10 @@ define(["views/game-view", "router"], function (gameView, router) {
     const note = document.createElement("div");
     note.className = "sprite";
 
+    // Generate a random number between 1 and 3 to determine the mask
+    const randomMask = Math.floor(Math.random() * 3) + 1;
+    note.classList.add(`mask${randomMask}`);
+
     note.style.top = "100";
     note.style.position = "fixed";
 
@@ -156,10 +160,21 @@ define(["views/game-view", "router"], function (gameView, router) {
   function startGame() {
     function spawnRandomNote() {
       if (!externals.pause) {
-        const randomColumn = Math.floor(Math.random() * 3) + 1;
-        createNote(randomColumn);
-        setTimeout(spawnRandomNote, getRandomInterval(3000, 3000));
-      }
+            const randomColumn = Math.floor(Math.random() * 3) + 1;
+            createNote(randomColumn);
+
+            // Adjust the parameters for the sinusoidal function
+            const amplitude = 200; // Amplitude of the sinusoidal function
+            const period = 5000; // Period of the sinusoidal function (adjust as needed)
+
+            // Use getRandomInterval as the base interval
+            const baseInterval = getRandomInterval(500, 500);
+
+            // Calculate the next interval based on a combination of getRandomInterval and a sinusoidal function
+            const nextInterval = baseInterval + amplitude * Math.sin((2 * Math.PI * Date.now()) / period);
+
+            setTimeout(spawnRandomNote, nextInterval);
+        }
     }
     function getRandomInterval(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
